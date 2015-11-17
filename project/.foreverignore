@@ -1,0 +1,6 @@
+**/.*/**
+**/test/**
+**/webapp/**
+build.sh
+install.sh
+package.json

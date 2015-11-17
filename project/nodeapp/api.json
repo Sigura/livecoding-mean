@@ -1,0 +1,398 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Expenses",
+    "description": "sample api",
+    "contact": {
+      "name": "Artur Dudnik",
+      "url": "https://github.com/Sigura/",
+      "email": "adudnik@gmail.com"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "schemes": ["http", "https"],
+  "basePath": "/api",
+  "produces": ["application/json"],
+  "consumes": ["application/json"],
+  "securityDefinitions": {
+    "token": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "paths": {
+    "/users": {
+      "x-swagger-router-controller": "users",
+      "get": {
+        "tags": ["user"],
+        "description": "Returns User list",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/user"
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/error"
+              }
+            }
+          }
+        },
+        "security": [{
+          "token": []
+        }],
+        "deprecated": false
+      },
+      "post": {
+        "tags": ["user"],
+        "parameters": [{
+          "name": "user",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/user"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/user"
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/error"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": ["user"],
+        "parameters": [{
+          "name": "user",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/user"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/user"
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/error"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": ["user"],
+        "parameters": [{
+          "name": "user",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/user"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/user"
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/error"
+              }
+            }
+          }
+        },
+        "security": [{
+          "token": []
+        }],
+        "deprecated": false
+      }
+    },
+    "/expenses": {
+      "x-swagger-router-controller": "expenses",
+      "get": {
+        "tags": ["expenses"],
+        "parameters": [{
+          "name": "dateFrom",
+          "in": "query",
+          "required": false,
+          "type": "string",
+          "format": "string"
+        }, {
+          "name": "dateTo",
+          "in": "query",
+          "required": false,
+          "type": "string",
+          "format": "string"
+        }, {
+          "name": "amountFrom",
+          "in": "query",
+          "required": false,
+          "type": "number",
+          "format": "double"
+        }, {
+          "name": "amountTo",
+          "in": "query",
+          "required": false,
+          "type": "number",
+          "format": "double"
+        }],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/expense"
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/error"
+              }
+            }
+          }
+        },
+        "security": [{
+          "token": []
+        }],
+        "deprecated": false
+      },
+      "put": {
+        "tags": ["expenses"],
+        "parameters": [{
+          "name": "expense",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/expense"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/expense"
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/error"
+              }
+            }
+          }
+        },
+        "security": [{
+          "token": []
+        }],
+        "deprecated": false
+      },
+      "post": {
+        "tags": ["expenses"],
+        "parameters": [{
+          "name": "expense",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/expense"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/expense"
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/error"
+              }
+            }
+          }
+        },
+        "security": [{
+          "token": []
+        }],
+        "deprecated": false
+      },
+      "delete": {
+        "tags": ["expenses"],
+        "parameters": [{
+          "name": "expense",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/expense"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/expense"
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/error"
+              }
+            }
+          }
+        },
+        "security": [{
+          "token": []
+        }],
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "expense": {
+      "type": "object",
+      "required": ["description", "amount"],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string",
+          "format": "string"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "amount": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "authInfo": {
+      "type": "object",
+      "required": ["name", "password"],
+      "properties": {
+        "password": {
+          "type": "string",
+          "format": "password"
+        },
+        "name": {
+          "type": "string",
+          "format": "string"
+        }
+      }
+    },
+    "user": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "last_accessed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "password": {
+          "type": "string",
+          "format": "password"
+        },
+        "name": {
+          "type": "string",
+          "format": "string"
+        },
+        "token": {
+          "type": "string",
+          "format": "string"
+        }
+      }
+    },
+    "error": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 600
+        }
+      }
+    }
+  }
+}

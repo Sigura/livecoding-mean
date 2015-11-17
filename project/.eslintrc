@@ -1,0 +1,43 @@
+{
+  //"parser": "babel-eslint",
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "blockBindings": true,
+    "classes": true,
+    "defaultParams": true,
+    "modules": true,
+    "superInFunctions": true,
+    "jsx": true
+  },
+
+  "rules": {
+    "strict": 2,
+    "no-multi-spaces": 0,
+    "no-global-strict": 0,
+    "no-extra-strict": 0,
+    "space-infix-ops": 0,
+    "no-underscore-dangle": 0,
+    "no-script-url": 0,
+    "quotes": [1, "single"],
+    "no-unused-expressions": 0,
+  },
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true,
+    "jquery": true,
+  },
+
+  "globals": {
+    "before": true,
+    "request": true,
+    "cleanDb": true,
+    "angular": true,
+    "expect": true,
+    "queryString": true,
+    "moment": true,
+    "lodash": true
+  }
+}
